@@ -26,11 +26,17 @@ public class Arithmetic
        
         ArithmeticBase r= new ArithmeticBase();
         Scanner in= new Scanner(System.in);
+        System.out.println("Enter first number:");
         int n= in.nextInt();
+        
+        System.out.println("Enter second number:");
         int m= in.nextInt();
-        double result = r.calculate(m,n);
-        System.out.println("result :" +result); 
-    
+        
+         System.out.println("Enter arithmetic operation to perform (PLUS, MINUS, TIMES, DIVIDE):");
+        ArithmeticBase.Operation operation = ArithmeticBase.Operation.valueOf(in.next().toUpperCase());
+
+        double result = r.calculate(operation, n, m);
+        System.out.println("Result: " + result);
     }
 }
 
